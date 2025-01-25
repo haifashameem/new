@@ -1,0 +1,24 @@
+{
+  "name": "reading-list",
+  "version": "1.0.0",
+  "description": "ReadLog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haifashameem/new.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haifashameem/new/issues"
+  },
+  "homepage": "https://github.com/haifashameem/new#readme",
+  "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "firebase": "^11.2.0"
+  }
+}
