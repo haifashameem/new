@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2px;
+    position:absolute;
+}
+button{
+    text-decoration: none;
+}
+.others{
+    text-decoration: none;
+    color: azure;
+    width:100vw;
+    height: 6vh;
+    
+    background-color: black;
+   
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+    gap:15px;
+}
+.go-tofinished{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px;
+}
+.go-tostatistics{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-right: 5px;
+    border:none;
+    border-radius: 5px;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#toread{
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    margin:5px;
+}
+.searchbar{
+    width :30vw;
+    height:6vh;
+    display: flex;
+    border: 2px solid white;
+    border-radius: 50px;
+    background-color: rgba(33, 33, 33, 0.719);
+}
+#searchbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    margin-top:10px;
+    margin-left:1px;
+    border: none;
+    outline: none;
+    background-color:transparent ;
+}
+.icon1{
+    color: beige;
+    width: 20px;
+    height: 20px;
+    margin-top:12px;
+    margin-left:15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: transparent;
+}
+input[type="text"] {
+    border: none; 
+    outline: none;
+    color: rgb(153, 137, 125);
+    width :10vw;
+    height:6vh;
+    size: 45px;
+    margin-left: -5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    font-size: 16px; 
+}
+input::placeholder {
+    font-size: 18px; 
+    color:gray; 
+}
+/* panel 1 */
+h3{
+    color: azure;
+     font-family: Arial, Helvetica, sans-serif; 
+     margin-left: 10px;
+     text-align:left;
+     width: 95vw;
+
+}
+
+
+.update {
+    font-weight: bolder;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.started-card:hover .update {
+    font-weight: bolder;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Started card styles */
+.started-card {
+    display: flex;
+    background-color: rgb(24, 22, 22);
+    width: 95vw;
+    height: 20vh;
+    margin-bottom: 5px;
+    position: relative; /* Ensure the parent has relative positioning */
+}
+
+/* Overlay styles */
+.overlay2 {
+    position: absolute;
+    top: 0; /* Position at the top of the card */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cover the entire card */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease;
+}
+
+.started-card:hover .overlay2 {
+    opacity: 1; /* Show overlay on hover */
+}
+img{
+    width:7vw;
+    height: 19vh;
+}
+.img{
+    margin-top :3px;
+    margin-left :5px;
+    border:0.2px solid rgb(42, 38, 38) ;
+    background-color: rgb(24, 22, 22) ;
+}
+.writer-name{
+    font-family: Arial, Helvetica, sans-serif;
+    size: 12px;
+    color: rgb(124, 129, 129);
+    margin:25px;
+    margin-top: 20px;
+}
+.details{
+    font-family: Arial, Helvetica, sans-serif;
+    size: 20px;
+    color: azure;
+    margin:25px;
+}
+.percentageread{
+    display: flex;
+    position:absolute;
+    flex-direction: row;
+    gap: 2vw;
+}
+#percentage{
+    color:rgb(104, 98, 98) ;
+    font-size:medium;
+    position: relative;
+    bottom: 9px;
+}
+.status-bar{
+    background-color: rgb(104, 98, 98);
+    align-items: center;
+    width: 80vw;
+    height: 1vh;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    margin-left: 20px;
+
+}
+.status-bar2{
+   background-color: rgb(32, 74, 200);
+    height: 1vh;
+
+}
+/* to read part panel 2 */
+.toread-sec{
+    text-align: left;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    width: 95vw;
+    height: fit-content;
+    background-color:black ;
+    
+}
+.toread-card{
+    background-color: rgba(42, 38, 38, 0.59);
+    position:relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+}
+
+    
+.img2{
+    width:7vw ;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 20vh;
+    border:5px solid rgb(42, 38, 38) ;
+    background-color: black;
+    padding:15px;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+.toread-card:hover .overlay{
+ height: 30%;
+ background-color: rgba(97, 75, 75, 0.556);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+ .select-book{
+    font-weight: bolder;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;  
+    text-align: center;
+ }
+ .toread-card:hover .select-book{
+
+    font-weight: bolder;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    border:none;
+    border-radius: 5px;
+}
+footer{
+    width:100vw;
+    height:15vh;
+    position: relative;
+    background-color: rgb(16, 15, 15);
+    bottom:0;
+}

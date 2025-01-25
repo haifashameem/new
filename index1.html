@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css"> 
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>readlog</title>
+</head>
+<body>
+    <header>
+        <br>
+        <div class="others">
+        <button class="go-tofinished"><a href="finished.html">Finished books</ahref></a></button>
+        <button class="go-tostatistics"><a href="statistics.html">statistics</ahref></a></button>
+        </div>
+        <h2 id="toread">To Read</h2>
+        
+         <div class="searchbar">
+            <button onclick="readValue()" id="searchbutton">
+                <div class="icon1">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </div> 
+            </button>
+               <div class="text">
+                <input type="text" id="yourlibrary" placeholder="your library" >
+               </div>
+          </div>
+        </header>
+          <br>
+          <h3 >Started</h3>
+            <br>
+          <div class="started-section">
+          
+          <div class="started-card">
+            
+            <div class="img"><img src="https://m.media-amazon.com/images/I/81YhQfeiynL.jpg"></div>
+            <div class="overlay2"><button class="update" onclick="updateData()">update</button></div>
+            <div class="stared-texts">
+            <div class="details">The Seret History</div>
+            <div class="writer-name">Donna tart</div>
+            <div class="percentageread">
+                <div class="status-bar"><div class="status-bar2" style="width:80vw;"></div></div>
+                <h2 id="percentage">76%</h2>
+            </div>
+         </div>
+        </div>
+       </div>
+       <br>
+       <h3 >To Read</h3><br>
+       <div class="toread-sec">
+            <div class="toread-card">
+                <div class="img2"><img src="https://m.media-amazon.com/images/I/81YhQfeiynL.jpg"></div>
+                <div class="overlay">
+                    <button class="select-book "onclick="createCard()">Read</button>
+                </div>
+            </div>
+         
+       </div>
+       <br><br>
+       <footer></footer>
+    <script src="app1.js"></script>
+</body>
+</html>
