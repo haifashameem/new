@@ -14,18 +14,4 @@ Features:
 - User created shelves
 - stats page: yearly goal with progress, daily streak
 
-## Installation
 
-Steps to install and run the project:
-
-1. Step 1
-2. Step 2
-3. Step 3
-
-## Usage
-
-How to use the project after installation.
-
-```bash
-# Example command
-python example.py
