@@ -12,6 +12,7 @@ function createCard(title, writer, image, num, totalnum) {
     let c =(b/100)*80;
     console.log("c :",c);
     let html = `<div class="started-card">
+     <div class="overlay2"><button class="update" onclick="updateData()">update</button></div>
         <div class="img">
             <img src="${image}" alt="Book cover">
         </div>
