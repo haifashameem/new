@@ -28,7 +28,7 @@ async function fetchBooks(){
     <h3>${book.title}</h3>
     <p>Author :${book.author}</p>
     <div class="layer">
-        <button class="add-to-read" data-id="${book.id}" data-title="${book.title}" data-author="${book.author}" data-cover="${book.coverImageUrl}" data-pages="${book.pages}">ADD TO TBR</button>
+        <button class="add-to-read" data-id="${bookId}" data-title="${book.title}" data-author="${book.author}" data-cover="${book.coverImageUrl}" data-pages="${book.pages}">ADD TO TBR</button>
       </div>
 
     `;
@@ -42,8 +42,14 @@ bookList.addEventListener("click", function(event){
     const bookTitle = event.target.getAttribute("data-title");
     const bookAuthor = event.target.getAttribute("data-author");
     const bookCover = event.target.getAttribute("data-cover");
-    const pages = event.target.getAttribute("data-pages");
+    const pages = parseInt(event.target.getAttribute("data-pages"));
 
+    const existingTBR = JSON.parse(localStorage.getItem("toread")) || [];
+    const isBookAlreadyInTBR = existingTBR.some(book => book.id === bookId);
+
+    if (isBookAlreadyInTBR) {
+      alert(`"${bookTitle}" is already in your To-Be-Read list.`);
+    } else {
     //object
     const bookData = {
       id: bookId,
@@ -52,12 +58,12 @@ bookList.addEventListener("click", function(event){
       coverImageUrl: bookCover,
       pages: pages,
     };
-    const existingTBR = JSON.parse(localStorage.getItem("toread")) || [];
+    
     existingTBR.push(bookData);
 
     localStorage.setItem("toread", JSON.stringify(existingTBR));
     alert(`"${bookTitle}" has been added to your TBR!`);
-
+  }
   }
 });
 

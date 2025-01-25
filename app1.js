@@ -1,9 +1,39 @@
+// Retrieve the "To-Read" list from localStorage
 
-function readValue() {
-    var inputValue = document.getElementById('yourlibrary').value;
-    alert('The value entered is: ' + inputValue);
-}
+
+
+const toReadList = JSON.parse(localStorage.getItem("toread")) || [];
+console.log(toReadList);
+const toReadSection = document.querySelector(".toread-sec");
+
+// function readValue() {
+//     var inputValue = document.getElementById('yourlibrary').value;
+//     alert('The value entered is: ' + inputValue);
+// }
 // started card
+if(toReadSection === 0){
+    toReadSection.innerHTML = `<p>To read list is empty..add books from Library!</p>`
+}
+else{
+toReadList.forEach((book) => {
+    createReadcard(book.coverImageUrl);
+});}
+
+
+function createReadcard(image){
+let html=`<div class="toread-card">
+           <div class="overlay">
+                    <button class="select-book">Read</button>
+                </div>
+            <div class="img2"><img src="${image}"></div>
+        </div>`;
+       document.querySelector(".toread-sec").innerHTML += html;
+}
+
+function updateData(){
+prompt("enter your current page")
+
+}
 function createCard(title, writer, image, num, totalnum) {
     let a = (num / totalnum) * 100; 
     console.log(a);
@@ -26,24 +56,4 @@ function createCard(title, writer, image, num, totalnum) {
     </div>
     `;
     document.querySelector(".started-section").innerHTML += html;
-}
-
-// Example call
-createCard("Harry Potter", "J.K. Rowling", "https://m.media-amazon.com/images/I/81YhQfeiynL.jpg", 54, 324);
-
-function createReadcard(image){
-let html=`<div class="toread-sec">
-          <div class="toread-card">
-           <div class="overlay">
-                    <button class="select-book">Read</button>
-                </div>
-            <div class="img2"><img src="https://m.media-amazon.com/images/I/81YhQfeiynL.jpg"></div>
-        </div>
-       </div>`;
-       document.querySelector(".toread-sec").innerHTML += html;
-}
-
-function updateData(){
-prompt("enter your current page")
-
 }

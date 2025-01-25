@@ -229,6 +229,7 @@ img{
     width: 95vw;
     height: fit-content;
     background-color:black ;
+    flex-wrap: wrap;
     
 }
 .toread-card{
