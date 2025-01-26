@@ -257,7 +257,11 @@ img{
     display: flex;
     justify-content: flex-start; 
     align-items: center;
+<<<<<<< HEAD
     flex-wrap: wrap;
+=======
+    flex: wrap;
+>>>>>>> af4e15712c3850b1505294455bf23de22b8ed23e
     width: 80vw;
     height:auto;
     background-color:rgba(34, 31, 31, 0.537) ;
