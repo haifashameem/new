@@ -1,88 +1,111 @@
 // Retrieve the "To-Read" list from localStorage
-
-
-
 const toReadList = JSON.parse(localStorage.getItem("toread")) || [];
 console.log(toReadList);
 const toReadSection = document.querySelector(".toread-sec");
 
-// function readValue() {
-//     var inputValue = document.getElementById('yourlibrary').value;
-//     alert('The value entered is: ' + inputValue);
-// }
-// started card
-
+// Create cards for "To-Read" list
 toReadList.forEach((book) => {
-    createReadcard(book.coverImageUrl,book.title,book.author,book.pages);
+    createReadcard(book.coverImageUrl, book.title, book.author, book.pages);
 });
 
-
-function createReadcard(image,title,author,pages){
-let html=`<div class="toread-card">
-           <div class="overlay">
-                    <button class="select-book" onclick="started('${image}','${title}','${author}',${pages})">Read</button>
-                </div>
-            <div class="img2"><img src="${image}"></div>
-        </div>`;
-       document.querySelector(".toread-sec").innerHTML += html;
+// Create "To-Read" card
+function createReadcard(image, title, author, pages) {
+    let html = `<div class="toread-card">
+                   <div class="overlay">
+                        <button class="select-book" onclick="started('${image}', '${title}', '${author}', ${pages})">Read</button>
+                    </div>
+                <div class="img2"><img src="${image}" alt="Book cover"></div>
+            </div>`;
+    document.querySelector(".toread-sec").innerHTML += html;
 }
 
-function started(image,title,author,page){
-    createCard(image,title,author, 0, page);
+// Handle "Started" book creation
+function started(image, title, author, pages) {
+    createCard(image, title, author, 0, pages);  // Start from page 0
 }
 
-// function updateData(){
-// prompt("enter your current page")
+// Create a "Started" card with progress bar
+function createCard(image, title, writer, currentPage, totalPages) {
+    let progress = (currentPage / totalPages) * 100;
+    let progressPercent = Math.floor(progress);
+    let statusWidth = (progressPercent / 100) * 80;
 
-// }
-function createCard(image,title,writer, num, totalnum) {
-    let a = (num / totalnum) * 100; 
-    console.log(a);
-    let b = Math.floor(a);
-    console.log(b);
-    let c =(b/100)*80;
-    console.log("c :",c);
     let html = `<div class="started-card">
-        <div class="img">
-            <img src="${image}" alt="Book cover">
-        </div>
-        
-        <div class="stared-texts">
-            <div class="details">${title}</div>
-            <div class="writer-name">${writer}</div>
-            <div class="percentageread">
-                <div class="status-bar"><div class="status-bar2" style=" width:${c}vw;"></div></div>
-                <h2 id="percentage">${b}%</h2>
-            </div>
-        </div>
-    </div>
-    `;
+                    <div class="img">
+                        <img src="${image}" alt="Book cover">
+                    </div>
+                    <div class="overlay2">
+                        <button class="update" onclick="updateprompt(${totalPages}, '${image}', '${title}', '${writer}', ${currentPage}, ${totalPages})">Update</button>
+                    </div>
+                    <div class="stared-texts">
+                        <div class="details">${title}</div>
+                        <div class="writer-name">${writer}</div>
+                        <div class="percentageread">
+                            <div class="status-bar"><div class="status-bar2" style="width:${statusWidth}vw;"></div></div>
+                            <h2 id="percentage">${progressPercent}%</h2>
+                        </div>
+                    </div>
+                </div>`;
     document.querySelector(".started-section").innerHTML += html;
 }
-<<<<<<< HEAD
-=======
-// function updateprompt(){
-//     prompt("Enter current page number");
 
-// }
 
-// function updateData(num,totalnum) {
-//     let e = (num / totalnum) * 100; 
-//     console.log(e);
-//     let f = Math.floor(e);
-//     console.log(f);
-//     let g = (f / 100) * 80;
-//     console.log("c:", g);
-//     let statusBar = document.querySelector('.status-bar2');
-//     if (statusBar) {
-//         statusBar.style.width = ${g}vw;
-//     }
-//     let percentage = document.getElementById('percentage');
-//     if (percentage) {
-//         percentage.textContent = ${f}%;
-//     }
-// }
+function addfinishedbook(image, title, author, pages) {
+    // Create an object for the finished book
+    const finishedBook = { image, title, author, pages };
 
-// Call the function to update the elements
-updateData(60, 200);
->>>>>>> af4e15712c3850b1505294455bf23de22b8ed23e
+    // Retrieve the existing finished books from localStorage
+    const finishedBooks = JSON.parse(localStorage.getItem('finishedBooks')) || [];
+
+    // Add the current finished book to the list
+    finishedBooks.push(finishedBook);
+
+    // Save the updated list back to localStorage
+    localStorage.setItem('finishedBooks', JSON.stringify(finishedBooks));
+
+    // Optionally, you can also update the UI in the current page (if needed)
+    let html = `<div class="finished-card">
+                    <div class="overlay">
+                        <button class="select-book" onclick="started('${image}', '${title}', '${author}', ${pages})">Read</button>
+                    </div>
+                    <div class="img2"><img src="${image}" alt="Book cover"></div>
+                </div>`;
+    document.querySelector(".finished-sec").innerHTML += html;
+}
+
+
+function updateprompt(totalPages, image, title, author, currentPage, totalPages) {
+    let userPage = prompt("Enter current page number");
+    let pageNum = parseInt(userPage);
+
+    if (isNaN(pageNum) || pageNum < 1 || pageNum > totalPages) {
+        alert("Invalid page number!");
+        return;
+    }
+
+    
+    localStorage.setItem("currentPage", pageNum);
+
+    updateData(pageNum, totalPages, image, title, author);
+}
+
+function updateData(currentPage, totalPages, image, title, author) {
+    let progress = (currentPage / totalPages) * 100;
+    let progressPercent = Math.floor(progress);
+    let statusWidth = (progressPercent / 100) * 80;
+
+    let statusBar = document.querySelector('.status-bar2');
+    if (statusBar) {
+        statusBar.style.width = `${statusWidth}vw`;
+    }
+
+    let percentage = document.getElementById('percentage');
+    if (percentage) {
+        percentage.textContent = `${progressPercent}%`;
+    }
+
+    if (progressPercent === 100 || currentPage === totalPages) {
+        addfinishedbook(image, title, author, totalPages);
+        alert("Yay, you completed the book!");
+    }
+}
