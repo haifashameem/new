@@ -257,13 +257,7 @@ img{
     display: flex;
     justify-content: flex-start; 
     align-items: center;
-<<<<<<< HEAD
-    width: 95vw;
-    height: fit-content;
-    background-color:black ;
     flex-wrap: wrap;
-=======
-    flex: wrap;
     width: 80vw;
     height:auto;
     background-color:rgba(34, 31, 31, 0.537) ;
@@ -273,7 +267,6 @@ img{
     border-radius: 50px;
     padding-top: 5vh;
     padding-bottom: 5vh;
->>>>>>> 22c470ff98f44a75c22d80e21108758ec92a9b11
     
 }
 .toread-card{
