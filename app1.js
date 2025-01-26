@@ -56,4 +56,43 @@ function createCard(title, writer, image, num, totalnum) {
     </div>
     `;
     document.querySelector(".started-section").innerHTML += html;
+<<<<<<< HEAD
 }
+=======
+}
+
+// Example call
+createCard("Harry Potter", "J.K. Rowling", "https://m.media-amazon.com/images/I/81YhQfeiynL.jpg", 54, 324);
+
+function createReadcard(image){
+let html=`<div class="toread-sec">
+          <div class="toread-card">
+           <div class="overlay">
+                    <button class="select-book">Read</button>
+                </div>
+            <div class="img2"><img src="https://m.media-amazon.com/images/I/81YhQfeiynL.jpg"></div>
+        </div>
+       </div>`;
+       document.querySelector(".toread-sec").innerHTML += html;
+}
+
+function updateData(num,totalnum) {
+    let e = (num / totalnum) * 100; 
+    console.log(e);
+    let f = Math.floor(e);
+    console.log(f);
+    let g = (f / 100) * 80;
+    console.log("c:", g);
+    let statusBar = document.querySelector('.status-bar2');
+    if (statusBar) {
+        statusBar.style.width = `${g}vw`;
+    }
+    let percentage = document.getElementById('percentage');
+    if (percentage) {
+        percentage.textContent = `${f}%`;
+    }
+}
+
+// Call the function to update the elements
+updateData(60, 200);
+>>>>>>> 22c470ff98f44a75c22d80e21108758ec92a9b11
