@@ -13,6 +13,63 @@ h1{
     display: flex;
     flex-direction: column;
 }
+.others{
+    text-decoration: none;
+    color: azure;
+    width:95vw;
+    height: 6vh;
+    background-color: rgba(0, 0, 0, 0.849);
+    margin-top: 1vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+    gap:15px;
+}
+.go-tolibrary{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px; 
+}
+.go-tostatistics{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px; 
+}
+.go-tofinished{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px;
+}
+.go-tohome{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px;
+}
 p{
     background-color: transparent;
     font-size: 45px;
@@ -56,4 +113,8 @@ B{
     align-items: center;
     background-color: rgb(24, 22, 22);
     border-radius: 50px;
+}
+a{
+    text-decoration: none;
+    color: azure;
 }

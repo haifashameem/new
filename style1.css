@@ -10,13 +10,17 @@ body{
     row-gap: 2px;
     position:absolute;
 }
+a{
+    text-decoration: none;
+    color: azure;
+}
 button{
     text-decoration: none;
 }
 .others{
     text-decoration: none;
     color: azure;
-    width:100vw;
+    width: 95vw;
     height: 6vh;
     
     background-color: black;
@@ -24,8 +28,19 @@ button{
     display: flex;
     justify-content: end;
     align-items: center;
-    
+    margin-top: 1vh;
     gap:15px;
+}
+.go-tolibrary{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-right: 5px;
+   border:none;
+   border-radius: 5px; 
 }
 .go-tofinished{
     text-decoration: none;
@@ -49,6 +64,17 @@ button{
     border:none;
     border-radius: 5px;
 }
+.go-tohome{
+    text-decoration: none;
+    color: azure;
+    font-weight: bolder;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-right: 5px;
+    border:none;
+    border-radius: 5px;
+  }
 header{
     display: flex;
     flex-direction: column;
@@ -57,7 +83,7 @@ header{
 #toread{
     color: azure;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
+    size: 55px;
     margin:5px;
 }
 .searchbar{
@@ -169,15 +195,20 @@ h3{
 .started-card:hover .overlay2 {
     opacity: 1; /* Show overlay on hover */
 }
+h1{
+    color: azure;
+    font-family:'Times New Roman', Times, serif;
+}
 img{
     width:7vw;
     height: 19vh;
+    background-color: black;
 }
 .img{
     margin-top :3px;
-    margin-left :5px;
+    margin-left :15px;
     border:0.2px solid rgb(42, 38, 38) ;
-    background-color: rgb(24, 22, 22) ;
+    background-color: black ;
 }
 .writer-name{
     font-family: Arial, Helvetica, sans-serif;
@@ -226,28 +257,35 @@ img{
     display: flex;
     justify-content: flex-start; 
     align-items: center;
-    width: 95vw;
-    height: fit-content;
-    background-color:black ;
+    flex: wrap;
+    width: 80vw;
+    height:auto;
+    background-color:rgba(34, 31, 31, 0.537) ;
+    margin-left: 3vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    border-radius: 50px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     
 }
 .toread-card{
-    background-color: rgba(42, 38, 38, 0.59);
+    background-color: black;
     position:relative;
     display: flex;
     justify-content:flex-start;
     align-items: flex-start;
+    
+   
 }
 
-    
 .img2{
     width:7vw ;
-    margin-left: 15px;
-    margin-right: 15px;
     height: 20vh;
-    border:5px solid rgb(42, 38, 38) ;
-    background-color: black;
-    padding:15px;
+    padding-top :3px;
+    padding-left :10px;
+    border:0.2px solid rgb(42, 38, 38) ;
+    background-color: black ;
 }
 
 .overlay{

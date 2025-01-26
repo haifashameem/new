@@ -43,7 +43,22 @@ let html=`<div class="toread-sec">
        document.querySelector(".toread-sec").innerHTML += html;
 }
 
-function updateData(){
-prompt("enter your current page")
-
+function updateData(num,totalnum) {
+    let e = (num / totalnum) * 100; 
+    console.log(e);
+    let f = Math.floor(e);
+    console.log(f);
+    let g = (f / 100) * 80;
+    console.log("c:", g);
+    let statusBar = document.querySelector('.status-bar2');
+    if (statusBar) {
+        statusBar.style.width = `${g}vw`;
+    }
+    let percentage = document.getElementById('percentage');
+    if (percentage) {
+        percentage.textContent = `${f}%`;
+    }
 }
+
+// Call the function to update the elements
+updateData(60, 200);
